@@ -664,10 +664,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 78c8675f-f463-44d2-a148-f382d2fbdb9f
+  cloudProjectId: fd30e248-5431-460c-b526-6a17bb01079a
   framebufferDepthMemorylessMode: 0
-  projectName: Random Platformer LV Generation
-  organizationId: akanon123
+  projectName: 600seconds
+  organizationId: andrerlopes19
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
