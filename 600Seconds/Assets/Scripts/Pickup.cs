@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour
     public bool catchable;
     public SoundManager soundManager;
     int gemMultiplier;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,12 +62,8 @@ public class Pickup : MonoBehaviour
                 gemvalue = 100;
                 gameObject.GetComponent<SpriteRenderer>().sprite = gems[0];
             }
-       // }
-       /* else // thrown gems are always worth 100
-        {
-            gemvalue = 100;
-            gameObject.GetComponent<SpriteRenderer>().sprite = gems[0];
-        }*/
+
+        rb = GetComponent<Rigidbody2D>();
 
         
     }
@@ -75,6 +72,19 @@ public class Pickup : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        //CheckIfOnAir();
+    }
+
+    void CheckIfOnAir()
+    {
+        if(rb.velocity != Vector2.zero)
+        {
+            Physics.IgnoreLayerCollision(10, 11);
+        }
     }
 
     

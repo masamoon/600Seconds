@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4468712176873798120}
   - component: {fileID: 2160781974839051925}
   - component: {fileID: -59294902317119779}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -131,10 +131,12 @@ MonoBehaviour:
   gem: {fileID: 102014174484854716, guid: 38c124113d8e67a41b1234ac711b0b59, type: 3}
   bomb: {fileID: 2457607544331746619, guid: 94bc571dbbd71bd4290ec83edbf4e6f4, type: 3}
   weightText: {fileID: 0}
+  bombText: {fileID: 0}
   portal: {fileID: 6041351908440996260, guid: 19120a9eb0f3f534d90abff73a3a7364, type: 3}
   invincibilityDurationSeconds: 1.5
   animator: {fileID: 69579824136644611}
   soundManager: {fileID: 0}
+  isHovering: 0
 --- !u!95 &69579824136644611
 Animator:
   serializedVersion: 3

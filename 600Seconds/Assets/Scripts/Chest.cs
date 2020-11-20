@@ -83,6 +83,7 @@ public class Chest : MonoBehaviour
         for(int i=0; i<numgems; i++)
         {
             GameObject throwgem = Instantiate(gem, gameObject.transform.position, Quaternion.identity);
+            Physics2D.IgnoreLayerCollision(10, 11, true);
             throwgem.GetComponent<Pickup>().catchable = false;
             Rigidbody2D throwgemrb2d = throwgem.GetComponent<Rigidbody2D>();
             throwgemrb2d.bodyType = RigidbodyType2D.Dynamic;
@@ -119,6 +120,7 @@ public class Chest : MonoBehaviour
 
        // Debug.Log("Gem catchable");
         throwgem.GetComponent<Pickup>().catchable = true;
+        Physics2D.IgnoreLayerCollision(10, 11, false);
 
         //Destroy(gameObject);
         curState = State.GONE;
