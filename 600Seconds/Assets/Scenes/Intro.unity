@@ -587,7 +587,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hoover\n\n\n\n\n\n\n\n\t\t   \n\n\n\n"
+  m_Text: "Hover\n\n\n\n\n\n\n\n\t\t   \n\n\n\n"
 --- !u!222 &1132709737
 CanvasRenderer:
   m_ObjectHideFlags: 0

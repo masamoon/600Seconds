@@ -166,7 +166,7 @@ public class platformer : MonoBehaviour
     void Hover()
     {
         
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.Z) && rb.velocity.y < 0)
         {
             animator.SetBool("isJumping", true);
             //rb.velocity += Vector2.up * Physics2D.gravity * (0.01f - 1) * Time.deltaTime;
