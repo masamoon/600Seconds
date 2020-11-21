@@ -46,6 +46,10 @@ public class platformer : MonoBehaviour
 
     private bool isDead;
 
+    private DistanceJoint2D distanceJoint;
+
+    private LineRenderer lineRenderer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +60,15 @@ public class platformer : MonoBehaviour
 
         soundManager = GetComponent<SoundManager>();
         rb = GetComponent<Rigidbody2D>();
+        distanceJoint = GetComponent<DistanceJoint2D>();
+
+        lineRenderer = GetComponent<LineRenderer>();
+
+        distanceJoint.enabled = false;
+
+        lineRenderer.enabled = false;
+
+        
 
         facingRight = true;
         //fuel = 100;
@@ -104,6 +117,7 @@ public class platformer : MonoBehaviour
             ThrowGem();
             ThrowBomb();
             Hover();
+            GrappleHook();
         }
         fuelbar.setFuel(fuel);
 
@@ -199,7 +213,7 @@ public class platformer : MonoBehaviour
 
     void ThrowGem()
     {
-        if (Input.GetKeyDown(KeyCode.X) && Score.score>=100)
+        if (Input.GetKeyDown(KeyCode.F) && Score.score>=100)
         {
             Debug.Log("throw gem");
             GameObject throwgem = Instantiate(gem, gameObject.transform.position, Quaternion.identity);
@@ -210,6 +224,46 @@ public class platformer : MonoBehaviour
             throwgemrb2d.AddForce(new Vector2(2,2) * 50);
             StartCoroutine(BecomeTemporarilyInvincible(throwgem));
             
+        }
+    }
+
+    void GrappleHook()
+    {
+
+        if (distanceJoint.distance > 1f)
+        {
+            distanceJoint.distance -= 0.2f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.up,Mathf.Infinity,~LayerMask.GetMask("Player","Room","Portal"));
+            Debug.DrawLine(transform.position, hit.transform.position, Color.red);
+            print("ray to: "+hit.collider.gameObject.name);
+            //print("grappling");
+
+            if (hit.collider.gameObject.CompareTag("Breakable"))  //Ground
+            {
+                print("grappled");
+                lineRenderer.enabled = true;
+                distanceJoint.enabled = true;
+                distanceJoint.connectedBody = hit.collider.attachedRigidbody;
+                distanceJoint.distance = Vector2.Distance(transform.position, hit.point);
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, hit.point);
+            }
+                     
+            
+        }
+
+        if (Input.GetKey(KeyCode.X))
+        {
+            lineRenderer.SetPosition(0, transform.position);
+        }
+        if(Input.GetKeyUp(KeyCode.X))
+        {
+            distanceJoint.enabled = false;
+            lineRenderer.enabled = false;
         }
     }
 

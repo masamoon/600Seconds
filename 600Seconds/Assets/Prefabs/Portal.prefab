@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5310709635366873757}
   - component: {fileID: 3848314667869999438}
   - component: {fileID: 4411607192945603070}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Keysprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 3861906801490697225}
   - component: {fileID: 7724068665713102182}
   - component: {fileID: 7557442777171833564}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Portal
   m_TagString: Portal
   m_Icon: {fileID: 0}
@@ -319,6 +319,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Space-Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402352003815237718, guid: 6b1480ca93be4454b91db0bd7e3650c3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b1480ca93be4454b91db0bd7e3650c3, type: 3}
