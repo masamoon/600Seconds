@@ -237,7 +237,7 @@ public class platformer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.up,Mathf.Infinity,~LayerMask.GetMask("Player","Room","Portal"));
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.up,Mathf.Infinity,~LayerMask.GetMask("Player","Room","Portal","Gem","Spike"));
             Debug.DrawLine(transform.position, hit.transform.position, Color.red);
             print("ray to: "+hit.collider.gameObject.name);
             //print("grappling");
