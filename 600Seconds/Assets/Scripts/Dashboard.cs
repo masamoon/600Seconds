@@ -24,5 +24,15 @@ public class Dashboard : MonoBehaviour
     {
         totalmoneytext.GetComponent<Text>().text = PlayerStats.getMoney().ToString();
         totalbombstext.GetComponent<Text>().text = PlayerStats.getBombs().ToString();
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            AddMoney();
+        }
+    }
+
+    void AddMoney()
+    {
+        PlayerStats.setMoney(50000);
     }
 }

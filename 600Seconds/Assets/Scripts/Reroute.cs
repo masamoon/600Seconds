@@ -44,18 +44,7 @@ public class Reroute : MonoBehaviour
 
     void OnClick()
     {
-        /*for(int i=0; i<planets.Length; i++)
-        {
-            planets[i].GetComponent<Planet>().Reroll();
-        }*/
-        /*if (PlayerStats.getNumRerouts() > 0)
-        {
-            planets[0].GetComponent<Planet>().Reroll();
-            int rerolls = PlayerStats.getNumRerouts() - 1;
-            PlayerStats.setNumRerouts(rerolls);
-        }*/
-        //Text buttonText = GetComponent<Text>();
-
+        
         DoReroute();
         
     }

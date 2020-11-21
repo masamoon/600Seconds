@@ -50,6 +50,8 @@ public class platformer : MonoBehaviour
 
     private LineRenderer lineRenderer;
 
+    public GameObject groundCheck;
+
 
     // Start is called before the first frame update
     void Start()
@@ -118,6 +120,7 @@ public class platformer : MonoBehaviour
             ThrowBomb();
             Hover();
             GrappleHook();
+            Dig();
         }
         fuelbar.setFuel(fuel);
 
@@ -161,6 +164,24 @@ public class platformer : MonoBehaviour
         animator.SetFloat("speed", Mathf.Abs(moveBy));
 
         rb.velocity = new Vector2(moveBy, rb.velocity.y); 
+    }
+
+    void Dig()
+    {
+        if (PlayerStats.getHasShovel())
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                print("Digging");
+                RaycastHit2D hit = Physics2D.Linecast(gameObject.transform.position, groundCheck.transform.position, ~LayerMask.GetMask("Player", "Room", "Portal", "Gem", "Spike"));
+                print("dig: " + hit.collider.gameObject.name);
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+        
     }
 
     void Hover()
@@ -229,41 +250,44 @@ public class platformer : MonoBehaviour
 
     void GrappleHook()
     {
-
-        if (distanceJoint.distance > 1f)
+        if (PlayerStats.getHasHookshot())
         {
-            distanceJoint.distance -= 0.2f;
-        }
 
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.up,Mathf.Infinity,~LayerMask.GetMask("Player","Room","Portal","Gem","Spike"));
-            Debug.DrawLine(transform.position, hit.transform.position, Color.red);
-            print("ray to: "+hit.collider.gameObject.name);
-            //print("grappling");
-
-            if (hit.collider.gameObject.CompareTag("Breakable"))  //Ground
+            if (distanceJoint.distance > 1f)
             {
-                print("grappled");
-                lineRenderer.enabled = true;
-                distanceJoint.enabled = true;
-                distanceJoint.connectedBody = hit.collider.attachedRigidbody;
-                distanceJoint.distance = Vector2.Distance(transform.position, hit.point);
-                lineRenderer.SetPosition(0, transform.position);
-                lineRenderer.SetPosition(1, hit.point);
+                distanceJoint.distance -= 0.2f;
             }
-                     
-            
-        }
 
-        if (Input.GetKey(KeyCode.X))
-        {
-            lineRenderer.SetPosition(0, transform.position);
-        }
-        if(Input.GetKeyUp(KeyCode.X))
-        {
-            distanceJoint.enabled = false;
-            lineRenderer.enabled = false;
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, Mathf.Infinity, ~LayerMask.GetMask("Player", "Room", "Portal", "Gem", "Spike"));
+                Debug.DrawLine(transform.position, hit.transform.position, Color.red);
+                print("ray to: " + hit.collider.gameObject.name);
+                //print("grappling");
+
+                if (hit.collider.gameObject.CompareTag("Breakable"))  //Ground
+                {
+                    print("grappled");
+                    lineRenderer.enabled = true;
+                    distanceJoint.enabled = true;
+                    distanceJoint.connectedBody = hit.collider.attachedRigidbody;
+                    distanceJoint.distance = Vector2.Distance(transform.position, hit.point);
+                    lineRenderer.SetPosition(0, transform.position);
+                    lineRenderer.SetPosition(1, hit.point);
+                }
+
+
+            }
+
+            if (Input.GetKey(KeyCode.X))
+            {
+                lineRenderer.SetPosition(0, transform.position);
+            }
+            if (Input.GetKeyUp(KeyCode.X))
+            {
+                distanceJoint.enabled = false;
+                lineRenderer.enabled = false;
+            }
         }
     }
 

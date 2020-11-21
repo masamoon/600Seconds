@@ -23,6 +23,8 @@ public static class PlayerStats
 
     private static bool hasDoubleGems, hasTripleGems;
 
+    private static bool hasShovel, hasHookshot;
+
     static PlayerStats()
     {
         maxFuel = 100;
@@ -31,6 +33,8 @@ public static class PlayerStats
         lives = 1;
         hasDoubleGems = false;
         hasTripleGems = false;
+        hasShovel = false;
+        hasHookshot = false;
     }
 
     public static void resetGame()
@@ -43,6 +47,8 @@ public static class PlayerStats
         lives = 1;
         hasDoubleGems = false;
         hasTripleGems = false;
+        hasShovel = false;
+        hasHookshot = false;
 
     }
 
@@ -144,6 +150,26 @@ public static class PlayerStats
     public static void setHasTripleGems(bool b)
     {
         hasTripleGems = b;
+    }
+
+    public static void setHasShovel(bool b)
+    {
+        hasShovel = b;
+    }
+
+    public static bool getHasShovel()
+    {
+        return hasShovel;
+    }
+
+    public static void setHasHookshot(bool b)
+    {
+        hasHookshot = b;
+    }
+
+    public static bool getHasHookshot()
+    {
+        return hasHookshot;
     }
 
 
