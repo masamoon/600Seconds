@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - Room
     - RoomPos
     - Score
+    - Shop
     - SoundManager
     - SpawnPoint
     - Spike
@@ -392,6 +393,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13918}
     - Class: 114
       Script: {instanceID: 14010}
+    - Class: 114
+      Script: {instanceID: 96878}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -712,7 +715,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 57aca698e1e47755b0755effb93d5b35
+      Hash: 7e8781b176e73b44f9f1880eed8f11c3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: platformer
@@ -1226,6 +1229,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f1519e0e7a7e1455f9e37688b8915460
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Shop
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
