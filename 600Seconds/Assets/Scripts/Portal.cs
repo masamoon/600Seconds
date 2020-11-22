@@ -56,7 +56,10 @@ public class Portal : MonoBehaviour
             GameObject timer_gobj = GameObject.FindGameObjectWithTag("Timer");
             timer = timer_gobj.GetComponent<Timer>();
             PlayerStats.setTimeRemaining(timer.timeRemaining);
-            spawnUpgrade();
+            if (PlayerStats.getChestOpened())
+            {
+                spawnUpgrade();
+            }
             SceneManager.LoadScene("Spaceship");
             
 

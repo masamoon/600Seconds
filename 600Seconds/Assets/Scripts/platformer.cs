@@ -224,7 +224,7 @@ public class platformer : MonoBehaviour
 
 
     void BetterJump() {
-        if (rb.velocity.y < 0 && !Input.GetKey(KeyCode.LeftShift)) {
+        if (rb.velocity.y < 0) {
             rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
             animator.SetBool("isJumping", false);
         } else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Z)) {

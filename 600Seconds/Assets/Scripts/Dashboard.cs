@@ -17,6 +17,8 @@ public class Dashboard : MonoBehaviour
         {
             SceneManager.LoadScene("Victory");
         }
+
+        PlayerStats.setChestOpened(false);
     }
 
     // Update is called once per frame
