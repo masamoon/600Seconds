@@ -23,10 +23,10 @@ public class Planet : MonoBehaviour
     void Start()
     {
         
-        genDifficuty();
+        genDifficuty(false);
         genUpgrade();
         //genType();
-        //genUpgrade();
+        
     }
 
     // Update is called once per frame
@@ -139,21 +139,53 @@ public class Planet : MonoBehaviour
         }
     }
 
-    public void genDifficuty()
+    public void genDifficuty(bool reroll)
     {
         float randdiff = Random.value;
 
-        if (randdiff < 0.4)
+        if (!reroll)
         {
-            planetDifficulty = Difficulty.Easy;
-        }
-        else if (randdiff < 0.8)
-        {
-            planetDifficulty = Difficulty.Medium;
+            if (PlayerStats.getTimeRemaining() > 400f)
+            {
+                if (randdiff < 0.4)
+                {
+                    planetDifficulty = Difficulty.Easy;
+                }
+                else if (randdiff < 0.8)
+                {
+                    planetDifficulty = Difficulty.Medium;
+                }
+                else
+                {
+                    planetDifficulty = Difficulty.Hard;
+                }
+            }
+            else if (PlayerStats.getTimeRemaining() > 200f)
+            {
+                if (randdiff < 0.5)
+                {
+                    planetDifficulty = Difficulty.Medium;
+                }
+                else
+                {
+                    planetDifficulty = Difficulty.Hard;
+                }
+            }
+            else
+            {
+                planetDifficulty = Difficulty.Hard;
+            }
         }
         else
         {
-            planetDifficulty = Difficulty.Hard;
+            if (randdiff < 0.5)
+            {
+                planetDifficulty = Difficulty.Medium;
+            }
+            else
+            {
+                planetDifficulty = Difficulty.Hard;
+            }
         }
 
         
@@ -161,7 +193,7 @@ public class Planet : MonoBehaviour
 
     public void Reroll()
     {
-        genDifficuty();
+        genDifficuty(true);
         genUpgrade();
         
         
