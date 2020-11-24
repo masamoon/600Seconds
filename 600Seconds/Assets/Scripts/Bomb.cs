@@ -30,7 +30,7 @@ public class Bomb : MonoBehaviour
 
         foreach(Collider2D hc in hitcolliders)
         {
-            if (hc.gameObject.CompareTag("Breakable"))
+            if (hc.gameObject.CompareTag("Breakable") || hc.gameObject.CompareTag("Enemy"))
             {
                 animator.SetBool("isExploded", true);
                 Destroy(hc.gameObject);

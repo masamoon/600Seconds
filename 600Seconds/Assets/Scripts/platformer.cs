@@ -170,7 +170,7 @@ public class platformer : MonoBehaviour
     {
         if (PlayerStats.getHasShovel())
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 print("Digging");
                 RaycastHit2D hit = Physics2D.Linecast(gameObject.transform.position, groundCheck.transform.position, ~LayerMask.GetMask("Player", "Room", "Portal", "Gem", "Spike"));
@@ -187,7 +187,7 @@ public class platformer : MonoBehaviour
     void Hover()
     {
         
-        if (Input.GetKey(KeyCode.Space) && rb.velocity.y < 0)
+        if (Input.GetKey(KeyCode.LeftShift) && rb.velocity.y < 0)
         {
             animator.SetBool("isJumping", true);
             //rb.velocity += Vector2.up * Physics2D.gravity * (0.01f - 1) * Time.deltaTime;
