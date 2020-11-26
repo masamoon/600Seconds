@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
@@ -66,7 +67,7 @@ public class Pickup : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        scoreText.GetComponent<TextMesh>().text = "";
+        scoreText.GetComponent<TextMeshPro>().text = "";
 
 
     }
@@ -99,7 +100,7 @@ public class Pickup : MonoBehaviour
             soundManager.Jump();
             Score.score += gemvalue*gemMultiplier;
 
-            scoreText.GetComponent<TextMesh>().text = "+" + (gemvalue * gemMultiplier).ToString();
+            scoreText.GetComponent<TextMeshPro>().text = "+" + (gemvalue * gemMultiplier).ToString();
 
            
             gameObject.GetComponent<SpriteRenderer>().enabled = false;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Chest : MonoBehaviour
@@ -10,12 +11,14 @@ public class Chest : MonoBehaviour
     public GameObject gem;
     public float invincibilityDurationSeconds;
     public GameObject portal;
+    public GameObject lootText;
 
     // Start is called before the first frame update
     void Start()
     {
         curState = State.CLOSED;
         transform.position += new Vector3(0, 0.4f, 0);
+        lootText.GetComponent<TextMeshPro>().text = "";
     }
 
     // Update is called once per frame
@@ -67,7 +70,10 @@ public class Chest : MonoBehaviour
     {
         int numgems;
 
-        if(PlayerStats.getCurrentDifficulty() == PlayerStats.Difficulty.EASY)
+        int lootscore;
+
+
+        /*if(PlayerStats.getCurrentDifficulty() == PlayerStats.Difficulty.EASY)
         {
             numgems = (int)Random.Range(1, 3);
         }
@@ -78,23 +84,39 @@ public class Chest : MonoBehaviour
         else
         {
             numgems = (int)Random.Range(6, 15);
-        }
+        }*/
 
-        for(int i=0; i<numgems; i++)
+        if (PlayerStats.getCurrentDifficulty() == PlayerStats.Difficulty.EASY)
         {
-            GameObject throwgem = Instantiate(gem, gameObject.transform.position, Quaternion.identity);
-            Physics2D.IgnoreLayerCollision(10, 11, true);
-            throwgem.GetComponent<Pickup>().catchable = false;
-            Rigidbody2D throwgemrb2d = throwgem.GetComponent<Rigidbody2D>();
-            throwgemrb2d.bodyType = RigidbodyType2D.Dynamic;
-            throwgemrb2d.AddForce(new Vector2(2, 0) * 50);
-            
-            StartCoroutine(BecomeTemporarilyInvincible(throwgem));
-            
-            
-
+            lootscore = (int)Random.Range(500,1000);
+        }
+        else if (PlayerStats.getCurrentDifficulty() == PlayerStats.Difficulty.MEDIUM)
+        {
+            lootscore = (int)Random.Range(3000, 6000);
+        }
+        else
+        {
+            lootscore = (int)Random.Range(9000, 30000);
         }
 
+        /* for (int i=0; i<numgems; i++)
+         {
+             GameObject throwgem = Instantiate(gem, gameObject.transform.position, Quaternion.identity);
+             Physics2D.IgnoreLayerCollision(10, 11, true);
+             throwgem.GetComponent<Pickup>().catchable = false;
+             Rigidbody2D throwgemrb2d = throwgem.GetComponent<Rigidbody2D>();
+             throwgemrb2d.bodyType = RigidbodyType2D.Dynamic;
+             throwgemrb2d.AddForce(new Vector2(2, 0) * 50);
+
+             StartCoroutine(BecomeTemporarilyInvincible(throwgem));
+
+
+
+         }*/
+
+
+        lootText.GetComponent<TextMeshPro>().text = "+"+lootscore.ToString();
+        PlayerStats.setMoney(PlayerStats.getMoney() + lootscore);
         PlayerStats.setNumRerouts(PlayerStats.getNumRerouts() + 1);
         PlayerStats.setBombs(PlayerStats.getBombs() + 1);
 
