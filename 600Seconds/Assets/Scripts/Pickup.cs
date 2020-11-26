@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour
     public SoundManager soundManager;
     int gemMultiplier;
     Rigidbody2D rb;
+    public GameObject scoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +66,9 @@ public class Pickup : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        
+        scoreText.GetComponent<TextMesh>().text = "";
+
+
     }
 
     // Update is called once per frame
@@ -95,6 +98,9 @@ public class Pickup : MonoBehaviour
             //Debug.Log("picked up gem");
             soundManager.Jump();
             Score.score += gemvalue*gemMultiplier;
+
+            scoreText.GetComponent<TextMesh>().text = "+" + (gemvalue * gemMultiplier).ToString();
+
            
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             
