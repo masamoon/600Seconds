@@ -88,15 +88,15 @@ public class Chest : MonoBehaviour
 
         if (PlayerStats.getCurrentDifficulty() == PlayerStats.Difficulty.EASY)
         {
-            lootscore = (int)Random.Range(500,1000);
+            lootscore = (int)Random.Range(5,10)*100;
         }
         else if (PlayerStats.getCurrentDifficulty() == PlayerStats.Difficulty.MEDIUM)
         {
-            lootscore = (int)Random.Range(3000, 6000);
+            lootscore = (int)Random.Range(3,6) * 1000;
         }
         else
         {
-            lootscore = (int)Random.Range(9000, 30000);
+            lootscore = (int)Random.Range(9, 30)*1000;
         }
 
         /* for (int i=0; i<numgems; i++)

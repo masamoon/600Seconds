@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8163606298781779287}
   - component: {fileID: 207198775511050967}
   - component: {fileID: 7093751474784968005}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LootProText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
