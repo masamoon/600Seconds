@@ -193,7 +193,7 @@ public class platformer : MonoBehaviour
             animator.SetBool("isJumping", true);
             //rb.velocity += Vector2.up * Physics2D.gravity * (0.01f - 1) * Time.deltaTime;
             float vX = rb.velocity.x;
-            rb.velocity = new Vector2(vX, (float)(-1f * 9.8f * (10.50f - 1) * Time.deltaTime));
+            rb.velocity = new Vector2(vX, (float)(-1f * 9.8f * (5.50f - 1) * Time.deltaTime));
             isHovering = true;
 
         }

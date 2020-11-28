@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 10;
-    public bool timerIsRunning = false;
+    public bool timerIsRunning;
     public Text timeText;
 
     private void Start()
     {
         // Starts the timer automatically
-        timerIsRunning = true;
+       // timerIsRunning = true;
         timeRemaining = PlayerStats.getTimeRemaining();
     }
 
@@ -33,6 +33,10 @@ public class Timer : MonoBehaviour
                 timerIsRunning = false;
                 SceneManager.LoadScene("GameOver");
             }
+        }
+        else
+        {
+            DisplayTime(timeRemaining);
         }
     }
 

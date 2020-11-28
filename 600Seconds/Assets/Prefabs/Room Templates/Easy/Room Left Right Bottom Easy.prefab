@@ -456,6 +456,7 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 1059517145776296, guid: 789cb061bf280cd4a9e7a6e7f610341f, type: 3}
   - {fileID: 1265759502714698, guid: a624c5d2f04a61241b9f2a9002a7bf8f, type: 3}
+  - {fileID: 3892460170619994877, guid: 06f1f87cc62ab12439f867148f9a7a2d, type: 3}
 --- !u!1 &1295459993966546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1005,7 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 1059517145776296, guid: 789cb061bf280cd4a9e7a6e7f610341f, type: 3}
   - {fileID: 1265759502714698, guid: a624c5d2f04a61241b9f2a9002a7bf8f, type: 3}
+  - {fileID: 3892460170619994877, guid: 06f1f87cc62ab12439f867148f9a7a2d, type: 3}
 --- !u!1 &1515740472208248
 GameObject:
   m_ObjectHideFlags: 0

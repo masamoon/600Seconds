@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 600
-  timerIsRunning: 0
+  timerIsRunning: 1
   timeText: {fileID: 897388161}
 --- !u!114 &897388161
 MonoBehaviour:

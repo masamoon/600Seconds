@@ -29,7 +29,12 @@ public class Dashboard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            AddMoney();
+            AddMoney(50000);
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            AddMoney(PlayerStats.getMoney()+50000);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -53,8 +58,8 @@ public class Dashboard : MonoBehaviour
 
     }
 
-    void AddMoney()
+    void AddMoney(int money)
     {
-        PlayerStats.setMoney(50000);
+        PlayerStats.setMoney(money);
     }
 }
