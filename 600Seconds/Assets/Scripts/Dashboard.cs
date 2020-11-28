@@ -31,6 +31,26 @@ public class Dashboard : MonoBehaviour
         {
             AddMoney();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            PlayerStats.setHasDoubleGems(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            PlayerStats.setNumRerouts(50);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            PlayerStats.setHasTripleGems(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            PlayerStats.setBombs(50);
+        }
+
+
     }
 
     void AddMoney()

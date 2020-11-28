@@ -20,14 +20,19 @@ public class Pickup : MonoBehaviour
         if(PlayerStats.getHasDoubleGems() )
         {
             gemMultiplier = 2;
+            print("double gems active");
         }
         else if (PlayerStats.getHasTripleGems())
         {
             gemMultiplier = 3;
+            print("triple gems active");
+
         }
         else
         {
             gemMultiplier = 1;
+            print("normal gems active");
+
         }
 
         soundManager = GetComponent<SoundManager>();

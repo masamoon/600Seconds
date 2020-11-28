@@ -80,6 +80,8 @@ public class LaunchPlanet : MonoBehaviour
 
         PlayerStats.setChestOpened(false);
 
+        PlayerStats.setExitPortalSpawned(false);
+
         PlayerStats.setTimeRemaining(timer.timeRemaining);
 
         SceneManager.LoadScene("Game");

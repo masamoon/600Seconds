@@ -25,6 +25,8 @@ public static class PlayerStats
 
     private static bool hasShovel, hasHookshot;
 
+    private static bool exitPortalSpawned;
+
     static PlayerStats()
     {
         maxFuel = 100;
@@ -170,6 +172,16 @@ public static class PlayerStats
     public static bool getHasHookshot()
     {
         return hasHookshot;
+    }
+
+    public static bool getExitPortalSpawned()
+    {
+        return exitPortalSpawned;
+    }
+
+    public static void setExitPortalSpawned(bool b)
+    {
+        exitPortalSpawned = b;
     }
 
 

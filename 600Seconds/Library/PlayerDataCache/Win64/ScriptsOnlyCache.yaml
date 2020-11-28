@@ -41,6 +41,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -73,6 +74,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
     - Class: 33
@@ -102,6 +105,8 @@ ScriptsOnlyBuild:
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
+      Script: {instanceID: 0}
+    - Class: 102
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -140,6 +145,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13000}
     - Class: 114
+      Script: {instanceID: 13122}
+    - Class: 114
       Script: {instanceID: 13376}
     - Class: 114
       Script: {instanceID: 13392}
@@ -153,6 +160,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13504}
     - Class: 114
       Script: {instanceID: 13818}
+    - Class: 114
+      Script: {instanceID: 13856}
     - Class: 114
       Script: {instanceID: 13918}
     - Class: 114
@@ -527,7 +536,7 @@ ScriptsOnlyBuild:
     className: BannerPlaceholder
   - hash:
       serializedVersion: 2
-      Hash: e6b2101eb16b373873df0a9187c6cf76
+      Hash: 5ad38e042e6d8020114839edceeb5c0b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Chest
@@ -1157,7 +1166,7 @@ ScriptsOnlyBuild:
     className: NetworkTransformChild
   - hash:
       serializedVersion: 2
-      Hash: cc483ff8d5a227d8789c08e47f4aea2a
+      Hash: d152703cd54ace7f329ba104ebad7758
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pickup

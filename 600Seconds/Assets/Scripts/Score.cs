@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         int bombs = PlayerStats.getBombs();
-        print("bombs: " + bombs);
+       // print("bombs: " + bombs);
         score_text.text = score.ToString();
        // bomb_text.text = bombs.ToString();
         

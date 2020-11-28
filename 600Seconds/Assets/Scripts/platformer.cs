@@ -132,10 +132,11 @@ public class platformer : MonoBehaviour
         Text bT = bombText.GetComponent<Text>();
         bT.text = PlayerStats.getBombs().ToString();
 
-        if (PlayerStats.getChestOpened())
+        if (PlayerStats.getChestOpened() && !PlayerStats.getExitPortalSpawned())
         {
             GameObject exitPortal = Instantiate(portal, gameObject.transform.position, Quaternion.identity);
-            PlayerStats.setChestOpened(false);
+            //PlayerStats.setChestOpened(false);
+            PlayerStats.setExitPortalSpawned(true);
         }
 
                

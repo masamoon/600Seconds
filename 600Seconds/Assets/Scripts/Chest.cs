@@ -37,9 +37,10 @@ public class Chest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                PlayerStats.setChestOpened(true);
                 spawnLoot();
                 curState = State.OPEN;
-                PlayerStats.setChestOpened(true);
+                
             }
         }
 
@@ -119,7 +120,7 @@ public class Chest : MonoBehaviour
         PlayerStats.setMoney(PlayerStats.getMoney() + lootscore);
         PlayerStats.setNumRerouts(PlayerStats.getNumRerouts() + 1);
         PlayerStats.setBombs(PlayerStats.getBombs() + 1);
-
+        
         Destroy(gameObject, 1f);
 
     }
