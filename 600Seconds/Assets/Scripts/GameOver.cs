@@ -22,7 +22,7 @@ public class GameOver : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             PlayerStats.resetGame();
-            SceneManager.LoadScene("Spaceship");
+            SceneManager.LoadScene("Menu");
         }
     }
 }

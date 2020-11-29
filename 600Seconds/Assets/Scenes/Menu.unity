@@ -456,8 +456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194, y: -281}
-  m_SizeDelta: {x: 366.38397, y: 62.170166}
+  m_AnchoredPosition: {x: -130.5, y: -249.7}
+  m_SizeDelta: {x: 489.4605, y: 57.669754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486176120
 MonoBehaviour:
@@ -522,7 +522,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '2d pixel art by:
 
-    https://penusbmic.itch.io/'
+    https://penusbmic.itch.io/
+
+    https://helianthus-games.itch.io/pixel-art-planets'
 --- !u!222 &486176123
 CanvasRenderer:
   m_ObjectHideFlags: 0
