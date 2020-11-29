@@ -276,7 +276,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Congratulations! You've saved the Earth!\n\nThanks for playing the game.\n\nSee
-    you later Space Cowboys\n\n\t\tClear time:"
+    you later Space Cowboys\n\n\t\tRemaining time:"
 --- !u!222 &229878910
 CanvasRenderer:
   m_ObjectHideFlags: 0

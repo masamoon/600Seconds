@@ -11,10 +11,15 @@ public class MainMenu : MonoBehaviour
     //public GameObject MenuText;
     public static bool activated = false;
 
+    [SerializeField]
+    GameObject diffSlider_gobj;
+
+    Slider diffSlider;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        diffSlider = diffSlider_gobj.GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -23,6 +28,16 @@ public class MainMenu : MonoBehaviour
         BlinkText();
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            if (diffSlider.value == 0)
+            {
+                PlayerStats.setTimeRemaining(600f);
+                PlayerStats.setHardMode(false);
+            }
+            else
+            {
+                PlayerStats.setTimeRemaining(180f);
+                PlayerStats.setHardMode(true);
+            }
             SceneManager.LoadScene("Intro");
         }
 

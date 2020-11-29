@@ -27,6 +27,8 @@ public static class PlayerStats
 
     private static bool exitPortalSpawned;
 
+    private static bool hardModeEnabled;
+
     static PlayerStats()
     {
         maxFuel = 100;
@@ -184,6 +186,15 @@ public static class PlayerStats
         exitPortalSpawned = b;
     }
 
+    public static void setHardMode(bool b)
+    {
+        hardModeEnabled = b;
+    }
+
+    public static bool getHardMode()
+    {
+        return hardModeEnabled;
+    }
 
 
 

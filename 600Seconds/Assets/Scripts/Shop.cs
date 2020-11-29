@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour
         {
             hookshotbtn.GetComponentInChildren<Text>().text = "Sold Out";
             PlayerStats.setHasHookshot(true);
-            PlayerStats.setMoney(PlayerStats.getMoney() - 10000);
+            PlayerStats.setMoney(PlayerStats.getMoney() - 20000);
         }
     }
 
